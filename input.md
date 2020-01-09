@@ -36,4 +36,4 @@ reference-section-title: "参考文献"
 
 ## いいですね
 
-\cite{xyz2015} こうやって参考文献を載せられる
+\cite{SugoiJournal} こうやって参考文献を載せられる

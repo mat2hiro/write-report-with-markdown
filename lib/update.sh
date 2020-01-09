@@ -12,9 +12,9 @@ git branch -a
 ls -la
 
 echo "build tex."
-pandoc -sN -f markdown -t latex ${MD_NAME} -o output.tex -t latex --template ${TEMPLATE_NAME} --toc --top-level-division=chapter && cat ./output.tex
+pandoc -sN -f markdown -t latex ${MD_NAME} -o output.tex -t latex --template ${TEMPLATE_NAME} -N --top-level-division=chapter -B abstract.tex --bibliography=references.bib && cat ./output.tex
 echo "build pdf."
-pandoc -F pandoc-crossref ${MD_NAME} -o ${PDF_NAME} --pdf-engine=lualatex --template ${TEMPLATE_NAME} -N --toc --top-level-division=chapter
+pandoc -F pandoc-crossref ${MD_NAME} -o ${PDF_NAME} --pdf-engine=lualatex --template ${TEMPLATE_NAME} -N --top-level-division=chapter -B abstract.tex --bibliography=references.bib
 
 echo "git push."
 git status

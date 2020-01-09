@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: git update step
+      uses: ./.github/images/
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_BRANCH: "your/branch/want/to/push"
+        GITHUB_USERNAME: "your-github-name"
+        GITHUB_USEREMAIL: "your.github.email@example.com"
+        MD_NAME: "input.md"
+        PDF_NAME: "output.pdf"
+        TEMPLATE_NAME: "mytemplate.tex"
+      with:
+        args: sh ./lib/update.sh

@@ -14,6 +14,10 @@ header-includes:
   - \usepackage{fontspec}
   - \usepackage{graphicx}
   - \usepackage[nobreak]{cite}
+  - \renewcommand{\setminus}{\mathbin{\backslash}} # このフォント環境にはsetminusが無い
+  # creverefを使う場合のセパレータ設定
+  #- \newcommand\crefrangeconjunction{--}
+  #- \newcommand\crefpairconjunction{, }
 
 toc: true
 lotTitle: "表目次"

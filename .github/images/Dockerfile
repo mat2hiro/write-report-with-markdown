@@ -10,6 +10,9 @@ RUN apk update && \
   apk upgrade && \
   apk add --no-cache git
 
+# you can add tex packages by tlmgr install.
+# RUN tlmgr install algorithms algorithmicx algorithm2e
+
 RUN wget https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-linux-amd64.tar.gz
 RUN tar xvfz pandoc-2.9.1.1-linux-amd64.tar.gz
 RUN cp pandoc-2.9.1.1/bin/* /usr/local/bin/

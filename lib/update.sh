@@ -14,6 +14,7 @@ ls -la
 echo "build tex."
 pandoc -sN -f markdown -t latex ${MD_NAME} -o output.tex -t latex --template ${TEMPLATE_NAME} -N --top-level-division=chapter -B abstract.tex --bibliography=references.bib && cat ./output.tex
 echo "build pdf."
+# if you want to use cleveref, add this option: `-M cref=True`
 pandoc -F pandoc-crossref ${MD_NAME} -o ${PDF_NAME} --pdf-engine=lualatex --template ${TEMPLATE_NAME} -N --top-level-division=chapter -B abstract.tex --bibliography=references.bib
 
 echo "git push."
